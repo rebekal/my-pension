@@ -19,7 +19,10 @@ export default function YearlyPensionCard({ user }: YearlyPensionProps) {
     (_, i) => startYear + i,
   );
 
-  const adjustedPension = calculatePensionAtAge(user?.pensionAmount || 0, selectedYear);
+  const adjustedPension = calculatePensionAtAge(
+    user?.pensionAmount || 0,
+    selectedYear,
+  );
 
   return (
     <div className="bg-blue-600 text-white rounded-lg p-6 mb-6">
