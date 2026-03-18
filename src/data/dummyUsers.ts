@@ -1,4 +1,5 @@
 import { User } from "../types/user";
+import { calculateAnnualPension } from "../utils/pensionCalculator";
 
 export const dummyUsers: User[] = [
   {
@@ -8,7 +9,6 @@ export const dummyUsers: User[] = [
     annualSalaryNOK: 720000,
     positionPercent: 100,
     employmentStart: "2012-08-01",
-    pensionAmount: 300000,
   },
   {
     id: "1002",
@@ -42,6 +42,20 @@ export const dummyUsers: User[] = [
     positionPercent: 100,
     employmentStart: "2008-09-01",
   },
+  {
+    id: "1006",
+    name: "Ingrid Hansen",
+    birthYear: 1962,
+    annualSalaryNOK: 650000,
+    positionPercent: 80,
+    employmentStart: "2000-01-15",
+  },
 ];
 
-export const CURRENT_USER: User = dummyUsers[0];
+// Beregn pensjon dynamisk (MVP demo - ville vært beregnet i API i produksjon)
+export const usersWithPension = dummyUsers.map((user) => ({
+  ...user,
+  pensionAmount: calculateAnnualPension(user),
+}));
+
+export const CURRENT_USER: User = usersWithPension[0];

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { User } from "../types/user";
-import { dummyUsers } from "../data/dummyUsers";
+import { dummyUsers, usersWithPension } from "../data/dummyUsers";
 import YearlyPensionCard from "../components/YearlyPensionCard";
 import PensionDetailsCard from "../components/PensionDetailsCard";
 
@@ -12,7 +12,7 @@ export default function MyPensionPage({ user }: MyPensionPageProps) {
   const [selectedUser, setSelectedUser] = useState<User>(user);
 
   const handleUserChange = (userId: string) => {
-    const newUser = dummyUsers.find((u) => u.id === userId);
+    const newUser = usersWithPension.find((u) => u.id === userId);
     if (newUser) {
       setSelectedUser(newUser);
     }
