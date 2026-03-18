@@ -11,14 +11,11 @@ export default function PensionDetailsCard({ user }: PensionDetailsProps) {
         Pensjonen er beregnet ut fra
       </p>
       <div className="flex justify-between items-center pb-4 border-b border-gray-200">
-        <span className="text-gray-700">Din alder</span>
-        <span className="font-bold text-gray-900">
-          {new Date().getFullYear() - user?.birthYear} år
-        </span>
+        <span className="text-gray-700">Fødselsår</span>
+        <span className="font-bold text-gray-900">{user?.birthYear}</span>
       </div>
-
       <div className="flex justify-between items-center pb-4 border-b border-gray-200">
-        <span className="text-gray-700">Antall år jobbet i staten</span>
+        <span className="text-gray-700">Opptjeningstid</span>
         <span className="font-bold text-gray-900">
           {new Date().getFullYear() -
             new Date(user?.employmentStart).getFullYear()}{" "}
