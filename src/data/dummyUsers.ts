@@ -52,7 +52,7 @@ export const dummyUsers: User[] = [
   },
 ];
 
-// Beregn pensjon dynamisk (MVP demo - ville vært beregnet i API i produksjon)
+// Calculate pension dynamically (MVP demo - would be calculated in API in production)
 export const usersWithPension = dummyUsers.map((user) => ({
   ...user,
   pensionAmount: calculateAnnualPension(user),
