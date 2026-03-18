@@ -51,6 +51,27 @@ export default function MyPensionPage({ user }: MyPensionPageProps) {
         <YearlyPensionCard user={selectedUser} />
         <PensionDetailsCard user={selectedUser} />
       </div>
+
+      <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg border border-blue-200 p-6 mt-6">
+        <p className="font-semibold text-blue-900 mb-6">Lær mer om pensjon</p>
+        <a
+          href={
+            selectedUser?.birthYear < 1963
+              ? process.env.REACT_APP_PENSION_OLD_LAW_URL
+              : process.env.REACT_APP_PENSION_NEW_LAW_URL
+          }
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Les mer om pensjon fra Statens Pensjonskasse (åpner i ny fane)"
+          className="flex items-center text-blue-600 hover:text-blue-800 font-medium underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
+        >
+          Les mer om pensjon fra SPK for deg som er født{" "}
+          {selectedUser?.birthYear < 1963
+            ? "i 1962 eller før"
+            : "i 1963 eller etter"}{" "}
+          →
+        </a>
+      </div>
     </div>
   );
 }
