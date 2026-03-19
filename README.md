@@ -1,4 +1,4 @@
-## Case for Statens Pensjonskasse, my-pension (MVP)
+## Case for Statens Pensjonskasse: my-pension (MVP)
 
 Dette er en enkel nettside for å vise estimert årlig pensjon fra SPK, og den er bygget med React, TypeScript og Tailwind.
 
@@ -27,19 +27,21 @@ http://localhost:3000
 
   - Ansettelsesstart (Maksimalt 30 års opptjening)
 
+- Kunne velge uttaksår og se estimert årlig pensjon basert på dette
+
 - Responsivt design (mobilvennlig)
 
 ## Pensjonsberegning
 
-Applikasjonen bruker en forenklet formel:
+Applikasjonen bruker en forenklet formel for:
 
 estimatedAnnualPension = annualSalaryNOK × 0.66 × pensionFactor
 
-Hvor:
+Hvor: pensionFactor = serviceYears / 30
 
-pensionFactor = serviceYears / 30
+Applikasjonen bruker også en fornklet formel for å regne ut pensjon med ±5% per år fra 67 år for alle brukere (Forenklet modell - Virkelige SPK-regler er mer komplekse)
 
-Merk: I produksjon ville jeg hatt denne beregningen fra backend-API.
+Merk: I produksjon ville jeg hatt beregningene fra backend-API.
 
 ## Teknologi
 
@@ -51,16 +53,4 @@ Merk: I produksjon ville jeg hatt denne beregningen fra backend-API.
 
 - Create React App
 
-## Kommende funksjoner
-
-- Unit tester
-
-- Valg av uttaksår
-
-- Eventuelt mer avanserte beregninger med uttaksår
-
-- Forbedret UI/UX
-
-## Status
-
-MVP – under utvikling
+- Jest Unit tester
