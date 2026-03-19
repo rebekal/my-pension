@@ -42,7 +42,7 @@ export default function MyPensionPage({ user }: MyPensionPageProps) {
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
           Hei, {selectedUser?.name}
         </h1>
-        <h2 className="text-gray-900 text-xl">
+        <h2 className="text-gray-900 text-2xl">
           Din pensjon fra Statens Pensjonskasse
         </h2>
       </div>

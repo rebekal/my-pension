@@ -33,17 +33,17 @@ export default function YearlyPensionCard({ user }: YearlyPensionProps) {
       <p className="text-4xl font-bold mb-2">
         {adjustedPension.toLocaleString("no-NO")} kr
       </p>
-      <p className="text-lg font-semibold text-blue-100 mb-4">pr. år</p>
+      <p className="text-xl font-semibold text-blue-100 mb-4">pr. år</p>
 
-      <div className="flex flex-col md:flex-row md:items-center md:justify-end gap-2 md:gap-2">
-        <label htmlFor="withdrawal-year" className="text-blue-100">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-end gap-4 md:gap-2 py-4 md:py-2">
+        <label htmlFor="withdrawal-year" className="text-blue-100 text-lg">
           Uttak ved:
         </label>
         <select
           id="withdrawal-year"
           value={selectedYear}
           onChange={(e) => setSelectedYear(Number(e.target.value))}
-          className="w-full md:w-auto px-4 py-2 border border-blue-400 rounded-lg text-blue-600 font-semibold focus:ring-2 focus:ring-white focus:border-transparent"
+          className="w-full md:w-auto px-4 py-3 md:py-2 border border-blue-400 rounded-lg text-blue-800 font-semibold focus:ring-2 focus:ring-white focus:border-transparent"
         >
           {withdrawalYears.map((year) => (
             <option key={year} value={year}>
