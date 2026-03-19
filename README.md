@@ -35,13 +35,20 @@ http://localhost:3000
 
 Applikasjonen bruker en forenklet formel for:
 
+```typescript
 estimatedAnnualPension = annualSalaryNOK × 0.66 × pensionFactor
+```
 
-Hvor: pensionFactor = serviceYears / 30
+Hvor:
 
-Applikasjonen bruker også en fornklet formel for å regne ut pensjon med ±5% per år fra 67 år for alle brukere (Forenklet modell - Virkelige SPK-regler er mer komplekse)
+```typescript
+pensionFactor = serviceYears / 30;
+```
 
-Merk: I produksjon ville jeg hatt beregningene fra backend-API.
+Applikasjonen bruker også en forenklet formel for å regne ut pensjon ved ulike uttaksår, hvor det er ±5% per år fra 67 år for alle brukere
+(Forenklet modell - Virkelige SPK-regler er mer komplekse)
+
+**Merk**: I produksjon ville jeg hatt beregningene fra backend-API.
 
 ## Teknologi
 
